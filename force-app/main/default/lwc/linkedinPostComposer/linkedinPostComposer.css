@@ -1,0 +1,179 @@
+/* ===== Card ===== */
+.composer-card {
+    background: #ffffff;
+    border: 1px solid #dfdeda;
+    border-radius: 8px;
+    padding: 12px;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    width: 100%;
+}
+
+/* ===== Top row ===== */
+.composer-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+/* ===== Avatar ===== */
+.composer-avatar-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    border: 2px solid #ffffff;
+    background: #5bc0ec;
+    flex-shrink: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.composer-avatar-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.composer-avatar-initials {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+}
+
+/* ===== Input trigger ===== */
+.composer-input-trigger {
+    flex: 1;
+    background: none;
+    border: 1px solid #b2b2b2;
+    border-radius: 32px;
+    padding: 10px 16px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 700;
+    color: #191919;
+    transition: border-color 0.15s, background 0.15s;
+    min-width: 0;
+}
+
+.composer-input-trigger:hover {
+    border-color: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.03);
+}
+
+/* ===== Actions ===== */
+.composer-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+}
+
+.composer-action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #191919;
+    transition: background 0.15s;
+}
+
+.composer-action-btn:hover {
+    background: rgba(0, 0, 0, 0.06);
+}
+
+.composer-action-icon {
+    width: 20px;
+    height: 16px;
+    display: block;
+    flex-shrink: 0;
+}
+
+/* ===== Write article icon (CSS recreation of Figma red document icon) ===== */
+.composer-article-icon {
+    display: inline-grid;
+    width: 18px;
+    height: 18px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.ai-bar,
+.ai-square {
+    background: #c13407;
+    position: absolute;
+    left: 0;
+}
+
+.ai-bar--top {
+    width: 18px;
+    height: 2px;
+    top: 0;
+}
+
+.ai-square {
+    width: 10px;
+    height: 10px;
+    top: 4px;
+    left: 0;
+}
+
+.ai-bar--r1 {
+    width: 6px;
+    height: 2px;
+    top: 4px;
+    left: 12px;
+}
+
+.ai-bar--r2 {
+    width: 6px;
+    height: 2px;
+    top: 8px;
+    left: 12px;
+}
+
+.ai-bar--r3 {
+    width: 6px;
+    height: 2px;
+    top: 12px;
+    left: 12px;
+}
+
+.ai-bar--bottom {
+    width: 18px;
+    height: 2px;
+    top: 16px;
+    left: 0;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 480px) {
+    .composer-card {
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+
+    .composer-actions {
+        padding: 0 8px;
+    }
+
+    .composer-action-btn span {
+        display: none;
+    }
+}

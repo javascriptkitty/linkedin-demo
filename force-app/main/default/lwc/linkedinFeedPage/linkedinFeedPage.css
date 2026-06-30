@@ -1,0 +1,193 @@
+/* ===== Page — fondo LinkedIn ===== */
+:host {
+    display: block;
+    background: #f4f2ee;
+    min-height: 100vh;
+    /* Break out of Experience Builder's container padding on all sides */
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    /* Pull up to cover top padding from EXB theme/section */
+    margin-top: -32px;
+    padding-top: 0;
+    box-sizing: border-box;
+}
+
+/* ===== 3-column grid ===== */
+.feed-page {
+    display: grid;
+    grid-template-columns: 225px 555px 300px;
+    grid-template-areas: 'left main right';
+    gap: 24px;
+    max-width: 1128px;
+    margin: 0 auto;
+    padding: 36px 16px 40px;
+    align-items: start;
+    box-sizing: border-box;
+}
+
+/* ===== Sidebars ===== */
+.feed-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Left stays fixed while page scrolls */
+.feed-sidebar--left {
+    grid-area: left;
+    position: sticky;
+    top: 68px; /* 52px nav + 16px gap */
+    align-self: start;
+}
+
+/* Right scrolls with the feed */
+.feed-sidebar--right {
+    grid-area: right;
+    position: static;
+}
+
+/* ===== Main feed ===== */
+.feed-main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+/* ===== Sort bar ===== */
+.feed-sort-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 0;
+}
+
+.feed-sort-divider {
+    flex: 1;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.08);
+}
+
+.feed-sort-controls {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+.feed-sort-label {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.6);
+    font-family: Inter, sans-serif;
+}
+
+.feed-sort-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.6);
+    padding: 2px 4px;
+    border-radius: 4px;
+    transition: background 0.15s;
+    font-family: Inter, sans-serif;
+}
+
+.feed-sort-btn:hover {
+    background: rgba(0, 0, 0, 0.06);
+}
+
+.feed-sort-icon {
+    width: 16px;
+    height: 16px;
+    display: block;
+}
+
+/* ===== Post wrapper ===== */
+.feed-post-wrapper {
+    width: 100%;
+}
+
+/* ===== Footer links ===== */
+.feed-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 8px;
+}
+
+.feed-footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    justify-content: center;
+}
+
+.feed-footer-link {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.6);
+    font-family: Inter, sans-serif;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.feed-footer-link:hover {
+    color: rgba(0, 0, 0, 0.9);
+    text-decoration: underline;
+}
+
+.feed-footer-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.feed-footer-logo {
+    height: 16px;
+    width: auto;
+    display: block;
+}
+
+.feed-footer-copy {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.9);
+    font-family: Inter, sans-serif;
+    white-space: nowrap;
+}
+
+/* ===== Responsive — tablet ===== */
+@media (max-width: 992px) {
+    .feed-page {
+        grid-template-columns: 225px 1fr;
+        grid-template-areas: 'left main';
+    }
+
+    .feed-sidebar--right { display: none; }
+}
+
+/* ===== Responsive — mobile ===== */
+@media (max-width: 600px) {
+    :host { background: #f4f2ee; }
+
+    .feed-page {
+        grid-template-columns: 1fr;
+        grid-template-areas: 'main';
+        padding: 0;
+        gap: 8px;
+    }
+
+    .feed-sidebar--left,
+    .feed-sidebar--right { display: none; }
+
+    .feed-sidebar { position: static; }
+}

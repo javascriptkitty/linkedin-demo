@@ -1,0 +1,430 @@
+/* ===== Card ===== */
+.post-card {
+    background: #ffffff;
+    border: 1px solid #dfdeda;
+    border-radius: 8px;
+    overflow: hidden;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    width: 100%;
+    max-width: 555px;
+    margin: 0 auto;
+}
+
+/* ===== Header ===== */
+.post-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 12px 12px 0;
+    gap: 8px;
+}
+
+.post-author-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    flex: 1;
+    min-width: 0;
+}
+
+/* ===== Avatar ===== */
+.post-avatar-wrapper {
+    flex-shrink: 0;
+}
+
+.post-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+.post-avatar--placeholder {
+    background: #5bc0ec;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.post-avatar--placeholder span {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+/* ===== Author details ===== */
+.post-author-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.post-author-name {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #000000;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.post-author-title {
+    margin: 1px 0 0;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.6);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.post-meta {
+    margin: 2px 0 0;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.post-meta-icon {
+    display: flex;
+    align-items: center;
+}
+
+.post-meta-img {
+    width: 15px;
+    height: 15px;
+    display: block;
+}
+
+/* ===== Icon button ===== */
+.post-icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s;
+    flex-shrink: 0;
+}
+
+.post-icon-btn:hover {
+    background: rgba(0, 0, 0, 0.06);
+}
+
+/* ===== Body ===== */
+.post-body {
+    padding: 12px 12px;
+}
+
+.post-content {
+    margin: 0;
+    font-size: 14px;
+    color: #191919;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.post-see-more {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 600;
+}
+
+.post-see-more:hover {
+    text-decoration: underline;
+}
+
+/* ===== Embedded media card ===== */
+.post-media-card {
+    margin: 0 12px 8px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.post-media-banner {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.post-media-banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Flat image — display as-is, full width, no crop */
+.post-media-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+}
+
+/* Red gradient overlay covers full container */
+.post-media-gradient {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    display: block;
+    pointer-events: none;
+}
+
+/* Text + logo overlay */
+.post-media-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    pointer-events: none;
+    box-sizing: border-box;
+}
+
+/* Figma: text area is 278px / 531px ≈ 52% of container width */
+.post-media-overlay-text {
+    display: flex;
+    flex-direction: column;
+    max-width: 52%;
+}
+
+/* Each span = one line (rendered via for:each). Font 20px on ~531px container. */
+.post-media-overlay-light {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.1;
+    text-transform: uppercase;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+.post-media-overlay-dark {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.1;
+    text-transform: uppercase;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+/* Adecco logo: 106×26px in Figma at bottom-left (106/531 ≈ 20%) */
+.post-media-overlay-logo {
+    display: block;
+    width: 20%;
+    height: auto;
+    max-width: 106px;
+    min-width: 60px;
+}
+
+/* Hashtag line (blue, below post content) */
+.post-hashtags {
+    margin: 4px 0 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0069c9;
+    font-family: Inter, sans-serif;
+    line-height: 1.4;
+}
+
+.post-media-footer {
+    padding: 12px;
+}
+
+.post-media-title {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #000000;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.post-media-domain {
+    margin: 4px 0 0;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+/* Learn more CTA button */
+.post-media-cta-btn {
+    display: block;
+    width: 100%;
+    background: #ffffff;
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 12px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0069c9;
+    cursor: pointer;
+    font-family: Inter, sans-serif;
+    transition: background 0.15s;
+}
+
+.post-media-cta-btn:hover,
+.post-media-cta-btn:focus {
+    background: rgba(0, 103, 194, 0.1);
+    color: #004182;
+}
+
+/* ===== Stats bar ===== */
+.post-stats {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.post-reactions {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.post-reaction-icons {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.post-reaction-img {
+    width: 15px;
+    height: 15px;
+    display: block;
+}
+
+.post-reaction-img--overlap {
+    margin-left: -3px;
+}
+
+.post-reaction-count {
+    font-size: 14px;
+    font-weight: 500;
+    color: #606163;
+    margin-left: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.post-counts-right {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.post-count-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.6);
+    letter-spacing: -0.28px;
+}
+
+.post-count-btn:hover {
+    color: rgba(0, 0, 0, 0.9);
+    text-decoration: underline;
+}
+
+.post-meta-dot {
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 14px;
+}
+
+/* ===== Divider ===== */
+.post-divider {
+    margin: 0;
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Action icons ===== */
+.post-action-icon {
+    width: 16px;
+    height: 16px;
+    display: block;
+}
+
+/* ===== Action buttons ===== */
+.post-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 64px;
+    height: 57px;
+}
+
+.post-action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+    padding: 10px 8px;
+    border-radius: 4px;
+    color: #404040;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.15s, color 0.15s;
+}
+
+.post-action-btn:hover {
+    background: rgba(0, 0, 0, 0.06);
+    color: #191919;
+}
+
+.post-action-btn--liked {
+    color: #0a66c2;
+}
+
+.post-action-btn--liked:hover {
+    color: #0a66c2;
+    background: rgba(10, 102, 194, 0.08);
+}
+
+/* ===== Responsive — mobile ===== */
+@media (max-width: 480px) {
+    .post-card {
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        max-width: 100%;
+    }
+
+    .post-avatar {
+        width: 40px;
+        height: 40px;
+    }
+
+    .post-actions {
+        padding: 4px 16px;
+    }
+
+    .post-action-btn span {
+        display: none;
+    }
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightningCommunity__Page</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__HomePage">
+            <property name="userPhoto" type="String" label="User Photo URL" />
+            <property name="userName" type="String" label="User Name" />
+            <property name="bodyText" type="String" label="Body Text" default="Alex, see who's viewed your profile in the last 90 days" />
+            <property name="ctaTitle" type="String" label="CTA Title" default="Unlock more opportunities with Premium" />
+            <property name="ctaLabel" type="String" label="CTA Button Label" default="Try for free" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

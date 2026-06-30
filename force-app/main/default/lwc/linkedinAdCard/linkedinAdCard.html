@@ -1,0 +1,37 @@
+<template>
+    <div class="ad-card">
+        <!-- Ad header -->
+        <div class="ad-header">
+            <span class="ad-label">Ad</span>
+            <button class="ad-more-btn" title="More options" onclick={handleMore}>
+                <img src={moreHorizontalUrl} alt="More" class="ad-more-icon" />
+            </button>
+        </div>
+
+        <!-- Body text -->
+        <p class="ad-body-text">{bodyText}</p>
+
+        <!-- Avatars -->
+        <div class="ad-avatars">
+            <div class="ad-avatar-circle ad-avatar-circle--user">
+                <template if:true={userPhoto}>
+                    <img class="ad-avatar-img" src={userPhoto} alt={userName} />
+                </template>
+                <template if:false={userPhoto}>
+                    <span class="ad-avatar-initials">{userInitials}</span>
+                </template>
+            </div>
+            <div class="ad-avatar-circle ad-avatar-circle--premium">
+                <img class="ad-avatar-img ad-avatar-img--premium" src={premiumLogoUrl} alt="LinkedIn Premium" />
+            </div>
+        </div>
+
+        <!-- CTA text -->
+        <p class="ad-cta-text">{ctaTitle}</p>
+
+        <!-- Button -->
+        <button class="ad-cta-btn" onclick={handleCta}>
+            {ctaLabel}
+        </button>
+    </div>
+</template>

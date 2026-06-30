@@ -1,0 +1,5 @@
+- Always use TypeScript strict mode.
+- Follow Airbnb style guide.
+- Write tests using Jest.
+- Use functional components in React.
+- Add JSDoc comments for all functions.

@@ -1,0 +1,135 @@
+<template>
+    <article class="post-card">
+        <!-- Header -->
+        <header class="post-header">
+            <div class="post-author-info">
+                <div class="post-avatar-wrapper">
+                    <template if:true={authorPhoto}>
+                        <img class="post-avatar" src={authorPhoto} alt={authorName} />
+                    </template>
+                    <template if:false={authorPhoto}>
+                        <div class="post-avatar post-avatar--placeholder">
+                            <span>{authorInitials}</span>
+                        </div>
+                    </template>
+                </div>
+                <div class="post-author-details">
+                    <p class="post-author-name">{authorName}</p>
+                    <p class="post-author-title">{authorTitle}</p>
+                    <template if:true={timeAgo}>
+                        <p class="post-meta">
+                            <span>{timeAgo} •</span>
+                            <span class="post-meta-icon">
+                                <img src={publicIconUrl} alt="Public" class="post-meta-img" />
+                            </span>
+                        </p>
+                    </template>
+                </div>
+            </div>
+            <button class="post-icon-btn" title="More options" onclick={handleMoreOptions}>
+                <img src={moreHorizontalUrl} alt="More options" class="post-action-icon" />
+            </button>
+        </header>
+
+        <!-- Body -->
+        <div class="post-body">
+            <p class="post-content">
+                {displayedContent}<template if:true={isTruncated}><button class="post-see-more" onclick={handleToggleContent}> ... {toggleLabel}</button></template>
+            </p>
+            <template if:true={contentHashtags}>
+                <p class="post-hashtags">{contentHashtags}</p>
+            </template>
+        </div>
+
+        <!-- Embedded media card (sponsored / shared link) -->
+        <template if:true={mediaImageUrl}>
+            <div class="post-media-card">
+                <!-- Image with optional gradient + text overlay (Figma layering) -->
+                <div class="post-media-banner">
+                    <img src={mediaImageUrl} alt={mediaTitle} class="post-media-img" />
+                    <template if:true={mediaGradientUrl}>
+                        <img src={mediaGradientUrl} alt="" class="post-media-gradient" aria-hidden="true" />
+                    </template>
+                    <template if:true={hasOverlayText}>
+                        <div class="post-media-overlay">
+                            <div class="post-media-overlay-text">
+                                <template for:each={overlayLightLines} for:item="line">
+                                    <span key={line.id} class="post-media-overlay-light">{line.text}</span>
+                                </template>
+                                <template for:each={overlayDarkLines} for:item="line">
+                                    <span key={line.id} class="post-media-overlay-dark">{line.text}</span>
+                                </template>
+                            </div>
+                            <template if:true={mediaOverlayLogoUrl}>
+                                <img src={mediaOverlayLogoUrl} alt="" class="post-media-overlay-logo" />
+                            </template>
+                        </div>
+                    </template>
+                </div>
+                <template if:true={mediaTitle}>
+                    <div class="post-media-footer" style={mediaFooterStyle}>
+                        <p class="post-media-title">{mediaTitle}</p>
+                        <template if:true={mediaDomain}>
+                            <p class="post-media-domain">{mediaDomain}</p>
+                        </template>
+                    </div>
+                    <template if:true={mediaCtaLabel}>
+                        <template if:true={mediaCtaUrl}>
+                            <a class="post-media-cta-btn" href={mediaCtaUrl} target="_blank" rel="noopener noreferrer">{mediaCtaLabel}</a>
+                        </template>
+                        <template if:false={mediaCtaUrl}>
+                            <button class="post-media-cta-btn" onclick={handleMediaCta}>{mediaCtaLabel}</button>
+                        </template>
+                    </template>
+                </template>
+            </div>
+        </template>
+
+        <!-- Stats bar -->
+        <template if:true={hasStats}>
+            <div class="post-stats">
+                <div class="post-reactions">
+                    <template if:true={reactions}>
+                        <span class="post-reaction-icons">
+                            <img src={reactionLikeUrl} alt="Like" class="post-reaction-img" />
+                            <img src={reactionHeartUrl} alt="Heart" class="post-reaction-img post-reaction-img--overlap" />
+                        </span>
+                        <span class="post-reaction-count">{reactions}</span>
+                    </template>
+                </div>
+                <div class="post-counts-right">
+                    <template if:true={commentsCount}>
+                        <button class="post-count-btn" onclick={handleOpenComments}>{commentsCount} comments</button>
+                    </template>
+                    <template if:true={repostsCount}>
+                        <span class="post-meta-dot"> · </span>
+                        <button class="post-count-btn" onclick={handleOpenReposts}>{repostsCount} reposts</button>
+                    </template>
+                </div>
+            </div>
+        </template>
+
+        <!-- Divider -->
+        <hr class="post-divider" />
+
+        <!-- Actions -->
+        <footer class="post-actions">
+            <button class={likeButtonClass} onclick={handleLike} title="Like">
+                <img src={likeIconUrl} alt="Like" class="post-action-icon" />
+                <span>Like</span>
+            </button>
+            <button class="post-action-btn" onclick={handleComment} title="Comment">
+                <img src={commentIconUrl} alt="Comment" class="post-action-icon" />
+                <span>Comment</span>
+            </button>
+            <button class="post-action-btn" onclick={handleRepost} title="Repost">
+                <img src={repostIconUrl} alt="Repost" class="post-action-icon" />
+                <span>Repost</span>
+            </button>
+            <button class="post-action-btn" onclick={handleSend} title="Send">
+                <img src={sendIconUrl} alt="Send" class="post-action-icon" />
+                <span>Send</span>
+            </button>
+        </footer>
+    </article>
+</template>

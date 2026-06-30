@@ -1,0 +1,37 @@
+<template>
+    <div class="news-card">
+        <!-- Header -->
+        <div class="news-header">
+            <h2 class="news-title">{title}</h2>
+            <button class="news-info-btn" title="About LinkedIn News" onclick={handleInfo}>
+                <img src={infoIconUrl} alt="Info" class="news-info-icon" />
+            </button>
+        </div>
+
+        <!-- News items -->
+        <ul class="news-list">
+            <template for:each={newsItems} for:item="item">
+                <li key={item.id} class="news-item">
+                    <button class="news-item-btn" onclick={handleItemClick} data-id={item.id}>
+                        <p class="news-item-headline">{item.headline}</p>
+                        <p class="news-item-meta">
+                            <span>{item.timeAgo}</span>
+                            <template if:true={item.readersCount}>
+                                <span class="news-item-dot"> · </span>
+                                <span>{item.readersCount} readers</span>
+                            </template>
+                        </p>
+                    </button>
+                </li>
+            </template>
+        </ul>
+
+        <!-- Show more -->
+        <template if:true={showMoreLabel}>
+            <button class="news-show-more" onclick={handleShowMore}>
+                <span>{showMoreLabel}</span>
+                <img src={chevronDownUrl} alt="" class="news-chevron-icon" />
+            </button>
+        </template>
+    </div>
+</template>

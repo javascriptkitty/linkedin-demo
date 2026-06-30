@@ -1,0 +1,75 @@
+<template>
+    <nav class="top-nav">
+        <div class="nav-content">
+            <!-- Left: logo + search -->
+            <div class="nav-left">
+                <div class="nav-logo">
+                    <img src={liLogoBugUrl} alt="LinkedIn" class="nav-logo-img" />
+                </div>
+                <div class="nav-search">
+                    <img src={searchIconUrl} alt="Search" class="nav-search-icon" />
+                    <span class="nav-search-placeholder">{searchPlaceholder}</span>
+                </div>
+            </div>
+
+            <!-- Center: navigation items -->
+            <div class="nav-center">
+                <button class="nav-item nav-item--active" onclick={handleHome}>
+                    <img src={homeIconUrl} alt="Home" class="nav-icon" />
+                    <span>Home</span>
+                </button>
+                <button class="nav-item" onclick={handleNetwork}>
+                    <img src={networkIconUrl} alt="My Network" class="nav-icon" />
+                    <span>My Network</span>
+                </button>
+                <button class="nav-item" onclick={handleJobs}>
+                    <img src={briefcaseIconUrl} alt="Jobs" class="nav-icon" />
+                    <span>Jobs</span>
+                </button>
+                <button class="nav-item" onclick={handleMessaging}>
+                    <img src={messagingIconUrl} alt="Messaging" class="nav-icon nav-icon--messaging" />
+                    <span>Messaging</span>
+                </button>
+                <button class="nav-item" onclick={handleNotifications}>
+                    <img src={bellIconUrl} alt="Notifications" class="nav-icon" />
+                    <span>Notifications</span>
+                </button>
+
+                <div class="nav-divider"></div>
+
+                <!-- Me -->
+                <button class="nav-item" onclick={handleMe}>
+                    <div class="nav-avatar-circle">
+                        <template if:true={userPhoto}>
+                            <img src={userPhoto} alt={userName} class="nav-avatar-img" />
+                        </template>
+                        <template if:false={userPhoto}>
+                            <span class="nav-avatar-initials">{userInitials}</span>
+                        </template>
+                    </div>
+                    <span class="nav-me-label">
+                        Me
+                        <svg class="nav-caret" viewBox="0 0 8 5" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M0 0 L8 0 L4 5 Z" fill="rgba(0,0,0,0.55)"/></svg>
+                    </span>
+                </button>
+
+                <div class="nav-divider"></div>
+
+                <!-- For Business -->
+                <button class="nav-item nav-item--wide" onclick={handleBusiness}>
+                    <img src={gridIconUrl} alt="For Business" class="nav-icon" />
+                    <span class="nav-me-label">
+                        For Business
+                        <svg class="nav-caret" viewBox="0 0 8 5" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M0 0 L8 0 L4 5 Z" fill="rgba(0,0,0,0.55)"/></svg>
+                    </span>
+                </button>
+
+                <!-- Try Premium -->
+                <button class="nav-item nav-item--wide nav-item--premium" onclick={handlePremium}>
+                    <img src={premiumIconUrl} alt="Premium" class="nav-icon" />
+                    <span>Try Premium for $0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+</template>

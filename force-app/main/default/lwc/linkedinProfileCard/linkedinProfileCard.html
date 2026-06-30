@@ -1,0 +1,69 @@
+<template>
+    <!-- Card 1: Cover + Avatar + Identity -->
+    <div class="pc-card pc-card--identity">
+        <div class="pc-cover">
+            <template if:true={coverPhoto}>
+                <img class="pc-cover-img" src={coverPhoto} alt="Cover" />
+            </template>
+            <template if:false={coverPhoto}>
+                <img class="pc-cover-img" src={defaultCoverUrl} alt="Cover" />
+            </template>
+        </div>
+        <div class="pc-avatar-area">
+            <div class="pc-avatar-circle">
+                <template if:true={avatarPhoto}>
+                    <img class="pc-avatar-img" src={avatarPhoto} alt={name} />
+                </template>
+                <template if:false={avatarPhoto}>
+                    <span class="pc-avatar-initials">{initials}</span>
+                </template>
+            </div>
+        </div>
+        <div class="pc-identity">
+            <p class="pc-name">{name}</p>
+            <p class="pc-job-title">{jobTitle}</p>
+            <p class="pc-location">{location}</p>
+        </div>
+    </div>
+
+    <!-- Card 2: Stats -->
+    <template if:true={showStats}>
+        <div class="pc-card pc-card--stats">
+            <button class="pc-stat-row" onclick={handleViewers}>
+                <span class="pc-stat-label">Profile viewers</span>
+                <span class="pc-stat-value">{profileViewers}</span>
+            </button>
+            <button class="pc-stat-row" onclick={handleAnalytics}>
+                <span class="pc-stat-label">View all analytics</span>
+            </button>
+        </div>
+    </template>
+
+    <!-- Card 3: Quick links -->
+    <template if:true={showLinks}>
+        <div class="pc-card pc-card--links">
+            <nav class="pc-links">
+                <button class="pc-link-btn" onclick={handleSavedItems}>
+                    <img src={bookmarkIconUrl} alt="Saved items" class="pc-link-icon" />
+                    <span>Saved items</span>
+                </button>
+                <button class="pc-link-btn" onclick={handleGroups}>
+                    <span class="pc-groups-icon" aria-hidden="true">
+                        <img src={groupsPart1Url} alt="" class="pc-groups-img pc-groups-img--1" />
+                        <img src={groupsPart2Url} alt="" class="pc-groups-img pc-groups-img--2" />
+                        <img src={groupsPart3Url} alt="" class="pc-groups-img pc-groups-img--3" />
+                    </span>
+                    <span>Groups</span>
+                </button>
+                <button class="pc-link-btn" onclick={handleNewsletters}>
+                    <img src={newslettersIconUrl} alt="Newsletters" class="pc-link-icon" />
+                    <span>Newsletters</span>
+                </button>
+                <button class="pc-link-btn" onclick={handleEvents}>
+                    <img src={eventsIconUrl} alt="Events" class="pc-link-icon pc-link-icon--sm" />
+                    <span>Events</span>
+                </button>
+            </nav>
+        </div>
+    </template>
+</template>
