@@ -43,8 +43,8 @@
     position: absolute;
     top: -28px;
     left: 18px;
-    width: 75px;
-    height: 75px;
+    width: 80px;
+    height: 80px;
     border-radius: 37.5px;
     border: 2.083px solid #ffffff;
     background: #5bc0ec;
@@ -52,6 +52,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 .pc-avatar-img {
@@ -73,7 +74,7 @@
 }
 
 .pc-identity {
-    padding: 0 18px 12px;
+    padding: 0 16px 16px;
     display: flex;
     flex-direction: column;
     gap: 4px;

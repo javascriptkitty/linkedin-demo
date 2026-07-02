@@ -1,0 +1,16 @@
+:host {
+    display: inline-flex;
+    color: inherit;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+.icon-small {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}

@@ -4,9 +4,9 @@ import LINKEDIN_ASSETS from '@salesforce/resourceUrl/linkedinAssets';
 export default class LinkedinTopNav extends LightningElement {
     @api userName = '';
     @api userPhoto = '';
-    @api searchPlaceholder = "I'm looking for...";
+    @api searchPlaceholder = "Search";
 
-    liLogoBugUrl     = `${LINKEDIN_ASSETS}/icons/li_logo_bug.png`;
+    liLogoUrl     = `${LINKEDIN_ASSETS}/icons/li_logo.svg`;
     searchIconUrl    = `${LINKEDIN_ASSETS}/icons/search.svg`;
     homeIconUrl      = `${LINKEDIN_ASSETS}/icons/nav_home.svg`;
     networkIconUrl   = `${LINKEDIN_ASSETS}/icons/nav_network.svg`;
