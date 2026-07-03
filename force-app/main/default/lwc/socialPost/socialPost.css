@@ -272,6 +272,7 @@
 .post-reactions {
     display: flex;
     align-items: center;
+    cursor: pointer;
     gap: 2px;
 }
 
@@ -311,15 +312,11 @@
     cursor: pointer;
     padding: 0;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
     color: rgba(0, 0, 0, 0.6);
     letter-spacing: -0.28px;
 }
 
-.post-count-btn:hover {
-    color: rgba(0, 0, 0, 0.9);
-    text-decoration: underline;
-}
 
 .post-meta-dot {
     color: rgba(0, 0, 0, 0.4);

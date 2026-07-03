@@ -15,24 +15,38 @@
             <!-- Center: navigation items -->
             <div class="nav-center">
                 <button class="nav-item nav-item--active" onclick={handleHome}>
-                    <!-- <img src={homeIconUrl} alt="Home" class="nav-icon" /> -->
                     <c-linkedin-icon name="home"></c-linkedin-icon>
+                    <template if:true={hasHomeBadge}>
+                        <span class="nav-badge nav-badge--dot" aria-hidden="true"></span>
+                    </template>
                     <span>Home</span>
                 </button>
                 <button class="nav-item" onclick={handleNetwork}>
                     <c-linkedin-icon name="network"></c-linkedin-icon>
+                    <template if:true={networkBadgeCount}>
+                        <span class="nav-badge">{networkBadgeCount}</span>
+                    </template>
                     <span>My Network</span>
                 </button>
                 <button class="nav-item" onclick={handleJobs}>
                     <c-linkedin-icon name="briefcase"></c-linkedin-icon>
+                    <template if:true={jobsBadgeCount}>
+                        <span class="nav-badge">{jobsBadgeCount}</span>
+                    </template>
                     <span>Jobs</span>
                 </button>
                 <button class="nav-item" onclick={handleMessaging}>
                     <c-linkedin-icon name="messaging"></c-linkedin-icon>
+                    <template if:true={messagingBadgeCount}>
+                        <span class="nav-badge">{messagingBadgeCount}</span>
+                    </template>
                     <span>Messaging</span>
                 </button>
                 <button class="nav-item" onclick={handleNotifications}>
                     <c-linkedin-icon name="bell"></c-linkedin-icon>
+                    <template if:true={notificationsBadgeCount}>
+                        <span class="nav-badge">{notificationsBadgeCount}</span>
+                    </template>
                     <span>Notifications</span>
                 </button>
 

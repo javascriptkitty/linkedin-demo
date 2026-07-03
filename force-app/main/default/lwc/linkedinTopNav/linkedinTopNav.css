@@ -193,6 +193,41 @@
     flex-shrink: 0;
 }
 
+/* ===== Badges ===== */
+.nav-icon-wrap {
+    position: relative;
+    display: inline-flex;
+    width: 24px;
+    height: 24px;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-badge {
+    position: absolute;
+    top: 2.5px;
+    right:20px;
+    background: rgb(203, 17, 45);
+    color: #fff;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    height: 16px;
+    min-width: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.nav-badge--dot::after {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    background: #fff;
+    border-radius: 50%;
+}
 
 @keyframes underlineGrow {
     from{

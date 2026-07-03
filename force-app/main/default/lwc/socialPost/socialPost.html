@@ -95,8 +95,11 @@
                     <template if:true={commentsCount}>
                         <button class="post-count-btn" onclick={handleOpenComments}>{commentsCount} comments</button>
                     </template>
+                   
                     <template if:true={repostsCount}>
-                        <span class="post-meta-dot"> · </span>
+                        <template if:true={commentsCount}>
+                            <span class="post-meta-dot"> · </span>
+                        </template>
                         <button class="post-count-btn" onclick={handleOpenReposts}>{repostsCount} reposts</button>
                     </template>
                 </div>

@@ -7,13 +7,4 @@
         <target>lightning__HomePage</target>
         <target>lightningCommunity__Page</target>
     </targets>
-    <targetConfigs>
-        <targetConfig targets="lightning__AppPage,lightning__HomePage">
-            <property name="composerPlaceholder" type="String" label="Composer Placeholder" default="Start a post" />
-            <property name="newsSectionTitle" type="String" label="News Section Title" default="LinkedIn News" />
-            <property name="newsShowMoreLabel" type="String" label="News Show More Label" default="Show more news" />
-            <property name="showStats" type="Boolean" label="Show Profile Stats" default="false" />
-            <property name="showLinks" type="Boolean" label="Show Profile Quick Links" default="false" />
-        </targetConfig>
-    </targetConfigs>
 </LightningComponentBundle>

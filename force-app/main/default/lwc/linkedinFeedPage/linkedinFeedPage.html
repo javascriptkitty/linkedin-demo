@@ -3,6 +3,7 @@
     <c-linkedin-top-nav
         user-name={resolvedUser.name}
         user-photo={resolvedUser.avatarPhoto}
+        nav-config={navConfig}
     ></c-linkedin-top-nav>
 
     <!-- Page body -->
@@ -40,7 +41,7 @@
                 <div class="feed-sort-controls">
                     <button class="feed-sort-btn" onclick={handleSort}>
                         <span >Sort by: </span>
-                        <strong class="feed-sort-label">{_sortLabel}</strong>
+                        <strong class="feed-sort-label">{sortLabel}</strong>
                         <img src={chevronDownUrl} alt="" class="feed-sort-icon" />
                     </button>
                 </div>
