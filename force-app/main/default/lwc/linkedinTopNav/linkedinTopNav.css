@@ -6,13 +6,11 @@
     width: 100%;
     height: 52px;
     display: flex;
-    align-items: stretch;
+    align-items: center;
     justify-content: center;
     position: sticky;
     top: 0;
     z-index: 100;
-    box-sizing: border-box;
-    padding-top: 1px;
 }
 
 .nav-content {
@@ -21,9 +19,8 @@
     justify-content: space-between;
     width: 100%;
     max-width: 1128px;
-    padding: 0 16px;
+    padding: 0;
     margin: 0 auto;
-
     height: 100%;
 }
 
@@ -115,24 +112,24 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0;
-    margin-top: 1px;
-    gap: 3px !important;
+    text-align: center;
     height: 100%;
     width: 80px;
     font-size: 12px;
-    letter-spacing: 3%;
     color: rgba(0, 0, 0, 0.6);
     font-weight: 400;
     transition: color 0.15s;
     white-space: nowrap;
     flex-shrink: 0;
     position: relative;
+    padding: 0;
+    gap: 2.5px;
 }
 
 .nav-item span{
    display: inline-flex;
    line-height: 16px;
+   /* margin-top: 2.5px; */
 }
 
 .nav-item::after {
@@ -153,7 +150,6 @@
 
 .nav-item--active {
     color: rgba(0, 0, 0, 0.9);
-    font-weight: 500;
 }
 
 .nav-item--active::after {
@@ -178,39 +174,6 @@
     width: 24px;
     height: 24px;
     display: block;
-}
-
-/* ===== Avatar in nav ===== */
-.nav-avatar-circle {
-    width: 24px;
-    height: 24px;
-    border-radius: 12px;
-    border:none;
-    background: #5bc0ec;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    flex-shrink: 0;
-}
-
-.nav-avatar-img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.nav-avatar-initials {
-    color: #ffffff;
-    font-size: 9px;
-    font-weight: 600;
-    line-height: 1;
-    position: relative;
-    z-index: 1;
 }
 
 /* ===== Me / dropdown labels ===== */

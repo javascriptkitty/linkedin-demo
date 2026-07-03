@@ -1,6 +1,7 @@
-<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 4.68082 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="Group 15443">
-<path id="Rectangle 4793" d="M2.18079e-07 7.01946C2.18079e-07 7.01946 0.378431 5.84735 2.34382 5.84735C4.30922 5.84735 4.68082 7.01946 4.68082 7.01946V14H2.18079e-07V7.01946Z" fill="var(--fill-0, #191919)"/>
-<ellipse id="Ellipse 695" cx="2.34041" cy="2.34041" rx="2.34041" ry="2.34041" fill="var(--fill-0, #191919)"/>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" width="16" height="16" role="img" aria-label="Groups" style="width: 16px; min-width: 16px; height: 16px; min-height: 16px;">
+    <path d="M8.5 7h-1A1.5 1.5 0 0 0 6 8.5V14h4V8.5A1.5 1.5 0 0 0 8.5 7m4.25 1h-.5A1.25 1.25 0 0 0 11 9.25V14h3V9.25A1.25 1.25 0 0 0 12.75 8"></path>
+    <circle cx="8" cy="4" r="2"></circle>
+    <circle cx="12.5" cy="5.5" r="1.5"></circle>
+    <path d="M3.75 8h-.5A1.25 1.25 0 0 0 2 9.25V14h3V9.25A1.25 1.25 0 0 0 3.75 8"></path>
+    <circle cx="3.5" cy="5.5" r="1.5"></circle>
 </svg>

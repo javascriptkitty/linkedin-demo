@@ -7,8 +7,8 @@
                     <img src={liLogoUrl} alt="LinkedIn" class="nav-logo-img" />
                 </div>
                 <div class="nav-search">
-                        <c-linkedin-nav-icon name="search"></c-linkedin-nav-icon>
-                        <input type="search" class="nav-search-input" placeholder={searchPlaceholder} />
+                    <img src={searchIconUrl} alt="Search" />
+                    <input type="search" class="nav-search-input" placeholder={searchPlaceholder} />
                 </div>
             </div>
 
@@ -16,40 +16,33 @@
             <div class="nav-center">
                 <button class="nav-item nav-item--active" onclick={handleHome}>
                     <!-- <img src={homeIconUrl} alt="Home" class="nav-icon" /> -->
-                    <c-linkedin-nav-icon name="home"></c-linkedin-nav-icon>
+                    <c-linkedin-icon name="home"></c-linkedin-icon>
                     <span>Home</span>
                 </button>
                 <button class="nav-item" onclick={handleNetwork}>
-                    <c-linkedin-nav-icon name="network"></c-linkedin-nav-icon>
+                    <c-linkedin-icon name="network"></c-linkedin-icon>
                     <span>My Network</span>
                 </button>
                 <button class="nav-item" onclick={handleJobs}>
-                    <c-linkedin-nav-icon name="briefcase"></c-linkedin-nav-icon>
+                    <c-linkedin-icon name="briefcase"></c-linkedin-icon>
                     <span>Jobs</span>
                 </button>
                 <button class="nav-item" onclick={handleMessaging}>
-                    <c-linkedin-nav-icon name="messaging"></c-linkedin-nav-icon>
+                    <c-linkedin-icon name="messaging"></c-linkedin-icon>
                     <span>Messaging</span>
                 </button>
                 <button class="nav-item" onclick={handleNotifications}>
-                    <c-linkedin-nav-icon name="bell"></c-linkedin-nav-icon>
+                    <c-linkedin-icon name="bell"></c-linkedin-icon>
                     <span>Notifications</span>
                 </button>
 
 
                 <!-- Me -->
                 <button class="nav-item nav-item--me" onclick={handleMe}>
-                    <div class="nav-avatar-circle">
-                        <template if:true={userPhoto}>
-                            <img src={userPhoto} alt={userName} class="nav-avatar-img" />
-                        </template>
-                        <template if:false={userPhoto}>
-                            <span class="nav-avatar-initials">{userInitials}</span>
-                        </template>
-                    </div>
+                    <c-linkedin-user-avatar name={userName} photo={userPhoto} size='24'></c-linkedin-user-avatar>
                     <span class="nav-label">
                         Me
-                        <c-linkedin-nav-icon name="caret"></c-linkedin-nav-icon>
+                        <c-linkedin-icon name="caret"></c-linkedin-icon>
                     </span>
                 </button>
 
@@ -57,10 +50,10 @@
 
                 <!-- For Business -->
                 <button class="nav-item nav-item--business" onclick={handleBusiness}>
-                    <c-linkedin-nav-icon name="grid"></c-linkedin-nav-icon>
+                    <c-linkedin-icon name="grid"></c-linkedin-icon>
                     <span class="nav-label">
                         For Business
-                        <c-linkedin-nav-icon name="caret"></c-linkedin-nav-icon>
+                        <c-linkedin-icon name="caret"></c-linkedin-icon>
                     </span>
                 </button>
 

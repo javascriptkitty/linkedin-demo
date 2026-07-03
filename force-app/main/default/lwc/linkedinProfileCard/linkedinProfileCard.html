@@ -1,26 +1,34 @@
 <template>
     <!-- Card 1: Cover + Avatar + Identity -->
-    <div class="pc-card pc-card--identity">
-        <div class="pc-cover">
-            <template if:true={coverPhoto}>
-                <img class="pc-cover-img" src={coverPhoto} alt="Cover" />
-            </template>
-            <template if:false={coverPhoto}>
-                <img class="pc-cover-img" src={defaultCoverUrl} alt="Cover" />
-            </template>
-        </div>
-        <div class="pc-avatar-area">
-            <div class="pc-avatar-circle">
-                <template if:true={avatarPhoto}>
-                    <img class="pc-avatar-img" src={avatarPhoto} alt={name} />
+    <div class="pc-card">
+        <div class="pc-card--identity">
+            <div class="pc-cover">
+                <template if:true={coverPhoto}>
+                    <img class="pc-cover-img" src={coverPhoto} alt="Cover" />
                 </template>
-                <template if:false={avatarPhoto}>
-                    <span class="pc-avatar-initials">{initials}</span>
+                <template if:false={coverPhoto}>
+                    <img class="pc-cover-img" src={defaultCoverUrl} alt="Cover" />
                 </template>
             </div>
+            <div class="pc-avatar-wrapper">
+                <c-linkedin-user-avatar name={name} photo={avatarPhoto} size="75"></c-linkedin-user-avatar>
+                <!-- <div class="pc-avatar-circle">
+                    <template if:true={avatarPhoto}>
+                        <img class="pc-avatar-img" src={avatarPhoto} alt={name} />
+                    </template>
+                    <template if:false={avatarPhoto}>
+                        <img class="pc-avatar-img" src={defaultAvatarUrl} alt={name} />
+                    </template>
+                </div> -->
+            </div>
         </div>
-        <div class="pc-identity">
-            <p class="pc-name">{name}</p>
+        <div class="pc-card--info">
+            <div class="pc-name-wrapper">
+                <p class="pc-name">{name}</p>
+                <template if:true={isVerified}>
+                    <img src={verifiedIconUrl} alt="Verified" class="pc-verified-icon" />
+                </template> 
+            </div>
             <p class="pc-job-title">{jobTitle}</p>
             <p class="pc-location">{location}</p>
         </div>
@@ -41,26 +49,22 @@
 
     <!-- Card 3: Quick links -->
     <template if:true={showLinks}>
-        <div class="pc-card pc-card--links">
+        <div class="pc-card">
             <nav class="pc-links">
                 <button class="pc-link-btn" onclick={handleSavedItems}>
-                    <img src={bookmarkIconUrl} alt="Saved items" class="pc-link-icon" />
+                    <img src={bookmarkIconUrl} alt="Saved items" />
                     <span>Saved items</span>
                 </button>
                 <button class="pc-link-btn" onclick={handleGroups}>
-                    <span class="pc-groups-icon" aria-hidden="true">
-                        <img src={groupsPart1Url} alt="" class="pc-groups-img pc-groups-img--1" />
-                        <img src={groupsPart2Url} alt="" class="pc-groups-img pc-groups-img--2" />
-                        <img src={groupsPart3Url} alt="" class="pc-groups-img pc-groups-img--3" />
-                    </span>
+                    <img src={groupsIconUrl} alt="Groups" />
                     <span>Groups</span>
                 </button>
                 <button class="pc-link-btn" onclick={handleNewsletters}>
-                    <img src={newslettersIconUrl} alt="Newsletters" class="pc-link-icon" />
+                    <img src={newslettersIconUrl} alt="Newsletters" />
                     <span>Newsletters</span>
                 </button>
                 <button class="pc-link-btn" onclick={handleEvents}>
-                    <img src={eventsIconUrl} alt="Events" class="pc-link-icon pc-link-icon--sm" />
+                    <img src={eventsIconUrl} alt="Events" />
                     <span>Events</span>
                 </button>
             </nav>

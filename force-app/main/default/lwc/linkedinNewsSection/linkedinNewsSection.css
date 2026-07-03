@@ -1,7 +1,7 @@
 /* ===== Card ===== */
 .news-card {
     background: #ffffff;
-    border: 1px solid #dfdeda;
+    outline: 1px solid #dfdeda;
     border-radius: 8px;
     overflow: hidden;
     font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;

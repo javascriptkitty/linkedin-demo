@@ -25,54 +25,57 @@
     grid-template-areas: 'left main right';
     gap: 24px;
     max-width: 1128px;
-    margin: 0 auto;
-    /* padding: 40px 0; */
+    margin: 24px auto;
     align-items: start;
     box-sizing: border-box;
 }
 
 /* ===== Sidebars ===== */
-.feed-sidebar {
+.feed-sidebar, .feed-main {
     display: flex;
     flex-direction: column;
     gap: 8px;
+
 }
 
 /* Left stays fixed while page scrolls */
-.feed-sidebar--left {
-    grid-area: left;
-    position: sticky;
-    top: 68px; /* 52px nav + 16px gap */
-    align-self: start;
-}
+/* .feed-sidebar--left {
+    grid-column: 1; */
+    /* grid-area: left;
+    position: sticky; */
+    /* top: 68px; */
+     /* 52px nav + 16px gap */
+    /* align-self: start; */
+/* } */
 
 /* Right scrolls with the feed */
-.feed-sidebar--right {
-    grid-area: right;
-    position: static;
-}
+/* .feed-sidebar--right { */
+    /* grid-area: right;
+    position: static; */
+    /* grid-column: 2;
+} */
 
 /* ===== Main feed ===== */
-.feed-main {
-    grid-area: main;
+/* .feed-main { */
+    /* grid-area: main;
     display: flex;
     flex-direction: column;
     gap: 8px;
-    min-width: 0;
-}
+    min-width: 0; */
+    /* grid-column: 3;
+} */
 
 /* ===== Sort bar ===== */
 .feed-sort-bar {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 4px 0;
+    gap: 16px;
 }
 
 .feed-sort-divider {
     flex: 1;
     height: 1px;
-    background: rgba(0, 0, 0, 0.08);
+    background: rgba(140, 140, 140, 0.2);
 }
 
 .feed-sort-controls {
@@ -83,9 +86,8 @@
 }
 
 .feed-sort-label {
-    font-size: 12px;
-    color: rgba(0, 0, 0, 0.6);
-    font-family: Inter, sans-serif;
+    font-weight: 600;
+    margin-left: 3.5px;
 }
 
 .feed-sort-btn {
@@ -94,24 +96,19 @@
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 2px;
     font-size: 12px;
-    font-weight: 600;
+    line-height: 15px;
+    font-weight: 400;
     color: rgba(0, 0, 0, 0.6);
-    padding: 2px 4px;
-    border-radius: 4px;
-    transition: background 0.15s;
-    /* font-family: Inter, sans-serif; */
+    padding: 0;
 }
 
-.feed-sort-btn:hover {
-    background: rgba(0, 0, 0, 0.06);
-}
 
 .feed-sort-icon {
     width: 16px;
     height: 16px;
     display: block;
+   padding-left: 8px;
 }
 
 /* ===== Post wrapper ===== */
@@ -123,35 +120,34 @@
 .feed-footer {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
     padding-top: 8px;
 }
 
 .feed-footer-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px 16px;
+    gap:0;
+    /* gap: 8px 16px; */
     justify-content: center;
 }
 
 .feed-footer-link {
+    display: inline-flex;
     font-size: 12px;
     color: rgba(0, 0, 0, 0.6);
-    /* font-family: Inter, sans-serif; */
+    margin: 4px 8px;
     cursor: pointer;
     white-space: nowrap;
+    gap: 4px;
 }
 
-.feed-footer-link:hover {
-    color: rgba(0, 0, 0, 0.9);
-    text-decoration: underline;
-}
 
 .feed-footer-brand {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 4px;
+    gap: 8px;
 }
 
 .feed-footer-logo {
@@ -163,51 +159,6 @@
 .feed-footer-copy {
     font-size: 12px;
     color: rgba(0, 0, 0, 0.9);
-    /* font-family: Inter, sans-serif; */
     white-space: nowrap;
 }
 
-/* ===== Responsive — tablet ===== */
-/* @media (max-width: 992px) {
-    .feed-page {
-        grid-template-columns: 225px 1fr;
-        grid-template-areas: 'left main';
-    }
-
-    .feed-sidebar--right { display: none; }
-} */
-
-/* ===== Responsive — mobile ===== */
-/* @media (max-width: 600px) {
-    :host { background: #f4f2ee; }
-
-    .feed-page {
-        grid-template-columns: 1fr;
-        grid-template-areas: 'main';
-        padding: 0;
-        gap: 8px;
-    }
-
-    .feed-sidebar--left,
-    .feed-sidebar--right { display: none; }
-
-    .feed-sidebar { position: static; }
-} */
-
-
-@media(min-width: 768px) {
-    .feed-page{
-      width: 720px;
-    }
-  }
-  @media (min-width: 960px) {
-    .feed-page{
-      width: 960px;
-    }
-  }
-  @media (min-width: 1200px) {
-    .feed-page{
-      width: 1200px;
-    }
-  }
-  

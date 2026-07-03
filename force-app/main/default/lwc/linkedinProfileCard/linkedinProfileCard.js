@@ -13,23 +13,15 @@ export default class LinkedinProfileCard extends LightningElement {
     @api profileViewers = 0;
     @api showStats = false;
     @api showLinks = false;
-
-    defaultCoverUrl    = `${LINKEDIN_ASSETS}/images/profile_banner.png`;
+    @api isVerified = false;
+    
+    defaultCoverUrl    = `${LINKEDIN_ASSETS}/images/li_banner_default.svg`;
+    defaultAvatarUrl   = `${LINKEDIN_ASSETS}/images/li_avatar_default.svg`;
     bookmarkIconUrl    = `${LINKEDIN_ASSETS}/icons/bookmark.svg`;
-    groupsPart1Url     = `${LINKEDIN_ASSETS}/icons/groups_icon.svg`;
-    groupsPart2Url     = `${LINKEDIN_ASSETS}/icons/groups_part2.svg`;
-    groupsPart3Url     = `${LINKEDIN_ASSETS}/icons/groups_part3.svg`;
+    groupsIconUrl     = `${LINKEDIN_ASSETS}/icons/groups_icon.svg`;
     newslettersIconUrl = `${LINKEDIN_ASSETS}/icons/newsletters.svg`;
     eventsIconUrl      = `${LINKEDIN_ASSETS}/icons/events.svg`;
-
-    get initials() {
-        if (!this.name) return '?';
-        return this.name
-            .split(' ')
-            .slice(0, 2)
-            .map((w) => w[0].toUpperCase())
-            .join('');
-    }
+    verifiedIconUrl    = `${LINKEDIN_ASSETS}/icons/li_verified.svg`;
 
     handleViewers() {
         this.dispatchEvent(new CustomEvent('viewviewers'));

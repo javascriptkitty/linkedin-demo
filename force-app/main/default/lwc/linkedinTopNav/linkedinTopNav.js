@@ -17,14 +17,6 @@ export default class LinkedinTopNav extends LightningElement {
     gridIconUrl      = `${LINKEDIN_ASSETS}/icons/nav_grid.svg`;
     premiumIconUrl   = `${LINKEDIN_ASSETS}/icons/nav_premium.svg`;
 
-    get userInitials() {
-        if (!this.userName) return '?';
-        return this.userName
-            .split(' ')
-            .slice(0, 2)
-            .map((w) => w[0].toUpperCase())
-            .join('');
-    }
 
     handleHome()          { this.dispatchEvent(new CustomEvent('home')); }
     handleNetwork()       { this.dispatchEvent(new CustomEvent('network')); }

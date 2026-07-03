@@ -2,14 +2,7 @@
     <div class="composer-card">
         <!-- Top row: avatar + input trigger -->
         <div class="composer-top">
-            <div class="composer-avatar-circle">
-                <template if:true={userPhoto}>
-                    <img class="composer-avatar-img" src={userPhoto} alt={userName}/>
-                </template>
-                <template if:false={userPhoto}>
-                    <span class="composer-avatar-initials">{userInitials}</span>
-                </template>
-            </div>
+            <c-linkedin-user-avatar name={userName} photo={userPhoto}></c-linkedin-user-avatar>
             <button class="composer-input-trigger" onclick={handleStartPost}>
                 <span>{placeholder}</span>
             </button>
@@ -18,23 +11,15 @@
         <!-- Bottom row: media actions -->
         <div class="composer-actions">
             <button class="composer-action-btn" onclick={handleVideo}>
-                <img src={videoIconUrl} alt="Video" class="composer-action-icon" />
+                <img src={videoIconUrl} alt="Video" />
                 <span>Video</span>
             </button>
             <button class="composer-action-btn" onclick={handlePhoto}>
-                <img src={photoIconUrl} alt="Photo" class="composer-action-icon" />
+                <img src={photoIconUrl} alt="Photo" />
                 <span>Photo</span>
             </button>
             <button class="composer-action-btn" onclick={handleArticle}>
-                <!-- Write article icon inline (red document icon from Figma) -->
-                <span class="composer-article-icon" aria-hidden="true">
-                    <span class="ai-bar ai-bar--top"></span>
-                    <span class="ai-square"></span>
-                    <span class="ai-bar ai-bar--r1"></span>
-                    <span class="ai-bar ai-bar--r2"></span>
-                    <span class="ai-bar ai-bar--r3"></span>
-                    <span class="ai-bar ai-bar--bottom"></span>
-                </span>
+                <img src={articleIconUrl} alt="Article" />
                 <span>Write article</span>
             </button>
         </div>

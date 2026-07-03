@@ -8,7 +8,7 @@
     <!-- Page body -->
     <div class="feed-page">
         <!-- Left sidebar -->
-        <aside class="feed-sidebar feed-sidebar--left">
+        <aside class="feed-sidebar">
             <c-linkedin-profile-card
                 name={resolvedUser.name}
                 job-title={resolvedUser.jobTitle}
@@ -24,7 +24,7 @@
         <!-- Main feed -->
         <main class="feed-main">
             <!-- Post composer -->
-            <!-- <c-linkedin-post-composer
+            <c-linkedin-post-composer
                 user-photo={resolvedUser.avatarPhoto}
                 user-name={resolvedUser.name}
                 placeholder={composerPlaceholder}
@@ -32,23 +32,23 @@
                 onaddvideo={handleAddVideo}
                 onaddphoto={handleAddPhoto}
                 onwritearticle={handleWriteArticle}
-            ></c-linkedin-post-composer> -->
+            ></c-linkedin-post-composer>
 
             <!-- Sort bar -->
-            <!-- <div class="feed-sort-bar">
+            <div class="feed-sort-bar">
                 <div class="feed-sort-divider"></div>
                 <div class="feed-sort-controls">
-                    <span class="feed-sort-label">Sort by:</span>
                     <button class="feed-sort-btn" onclick={handleSort}>
-                        <span>{_sortLabel}</span>
+                        <span >Sort by: </span>
+                        <strong class="feed-sort-label">{_sortLabel}</strong>
                         <img src={chevronDownUrl} alt="" class="feed-sort-icon" />
                     </button>
                 </div>
-            </div> -->
+            </div>
 
             <!-- Posts -->
             <template for:each={resolvedPosts} for:item="post">
-                <!-- <div key={post.id} class="feed-post-wrapper">
+                <div key={post.id} class="feed-post-wrapper">
                     <c-social-post
                         author-name={post.authorName}
                         author-title={post.authorTitle}
@@ -75,45 +75,45 @@
                         onrepost={handleRepost}
                         onsend={handleSend}
                     ></c-social-post>
-                </div> -->
+                </div>
             </template>
         </main>
 
         <!-- Right sidebar -->
-        <aside class="feed-sidebar feed-sidebar--right">
+        <aside class="feed-sidebar">
             <!-- News -->
-            <!-- <c-linkedin-news-section
+            <c-linkedin-news-section
                 title={newsSectionTitle}
                 news-items={resolvedNewsItems}
                 show-more-label={newsShowMoreLabel}
                 onnewsclick={handleNewsClick}
                 onshowmore={handleShowMoreNews}
-            ></c-linkedin-news-section> -->
+            ></c-linkedin-news-section>
 
             <!-- Ad / Premium -->
-            <!-- <c-linkedin-ad-card
+            <c-linkedin-ad-card
                 user-photo={resolvedUser.avatarPhoto}
                 user-name={resolvedUser.name}
-            ></c-linkedin-ad-card> -->
+            ></c-linkedin-ad-card>
 
             <!-- Sticky footer links -->
-            <!-- <div class="feed-footer">
+            <div class="feed-footer">
                 <div class="feed-footer-links">
                     <span class="feed-footer-link">About</span>
                     <span class="feed-footer-link">Accessibility</span>
                     <span class="feed-footer-link">Help Center</span>
-                    <span class="feed-footer-link">Privacy &amp; Terms</span>
+                    <span class="feed-footer-link">Privacy &amp; Terms  <c-linkedin-icon name="caret"></c-linkedin-icon></span>
                     <span class="feed-footer-link">Ad Choices</span>
                     <span class="feed-footer-link">Advertising</span>
-                    <span class="feed-footer-link">Business Services</span>
-                    <span class="feed-footer-link">Get the LinkedIn app</span>
+                    <span class="feed-footer-link">Business Services  <c-linkedin-icon name="caret"></c-linkedin-icon></span>
+                    <span class="feed-footer-link">Get the LinkedIn app </span>
                     <span class="feed-footer-link">More</span>
                 </div>
                 <div class="feed-footer-brand">
-                    <img src={liLogoUrl} alt="LinkedIn" class="feed-footer-logo" />
+                    <img src={linkedinLogoUrl} alt="LinkedIn" class="feed-footer-logo" />
                     <span class="feed-footer-copy">LinkedIn Corporation © 2026</span>
                 </div>
-            </div> -->
+            </div>
         </aside>
     </div>
 </template>

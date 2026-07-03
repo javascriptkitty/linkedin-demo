@@ -8,15 +8,8 @@ export default class LinkedinPostComposer extends LightningElement {
 
     videoIconUrl = `${LINKEDIN_ASSETS}/icons/video.svg`;
     photoIconUrl = `${LINKEDIN_ASSETS}/icons/photo.svg`;
+    articleIconUrl = `${LINKEDIN_ASSETS}/icons/article.svg`;
 
-    get userInitials() {
-        if (!this.userName) return '?';
-        return this.userName
-            .split(' ')
-            .slice(0, 2)
-            .map((w) => w[0].toUpperCase())
-            .join('');
-    }
 
     handleStartPost() {
         this.dispatchEvent(new CustomEvent('startpost'));

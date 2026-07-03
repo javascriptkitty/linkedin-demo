@@ -13,6 +13,7 @@
             <property name="name" type="String" label="Name" />
             <property name="jobTitle" type="String" label="Job Title" />
             <property name="location" type="String" label="Location" />
+            <property name="isVerified" type="Boolean" label="Is Verified" default="false" />
             <property name="avatarPhoto" type="String" label="Avatar Photo URL" />
             <property name="coverPhoto" type="String" label="Cover Photo URL" />
             <property name="profileViewers" type="Integer" label="Profile Viewers" default="0" />

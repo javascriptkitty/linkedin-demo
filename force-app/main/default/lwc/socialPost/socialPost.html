@@ -3,16 +3,7 @@
         <!-- Header -->
         <header class="post-header">
             <div class="post-author-info">
-                <div class="post-avatar-wrapper">
-                    <template if:true={authorPhoto}>
-                        <img class="post-avatar" src={authorPhoto} alt={authorName} />
-                    </template>
-                    <template if:false={authorPhoto}>
-                        <div class="post-avatar post-avatar--placeholder">
-                            <span>{authorInitials}</span>
-                        </div>
-                    </template>
-                </div>
+            <c-linkedin-user-avatar name={authorName} photo={authorPhoto}></c-linkedin-user-avatar>
                 <div class="post-author-details">
                     <p class="post-author-name">{authorName}</p>
                     <p class="post-author-title">{authorTitle}</p>
@@ -28,6 +19,9 @@
             </div>
             <button class="post-icon-btn" title="More options" onclick={handleMoreOptions}>
                 <img src={moreHorizontalUrl} alt="More options" class="post-action-icon" />
+            </button>
+            <button class="post-icon-btn" title="Close" onclick={handleClose}>
+                <img src={closeIconUrl} alt="Close" class="post-action-icon" />
             </button>
         </header>
 
@@ -109,27 +103,26 @@
             </div>
         </template>
 
-        <!-- Divider -->
-        <hr class="post-divider" />
-
         <!-- Actions -->
-        <footer class="post-actions">
+        <footer class="post-footer">
+            <div class="post-actions">
             <button class={likeButtonClass} onclick={handleLike} title="Like">
-                <img src={likeIconUrl} alt="Like" class="post-action-icon" />
+                <c-linkedin-icon name="like"></c-linkedin-icon>
                 <span>Like</span>
             </button>
             <button class="post-action-btn" onclick={handleComment} title="Comment">
-                <img src={commentIconUrl} alt="Comment" class="post-action-icon" />
+                <c-linkedin-icon name="comment"></c-linkedin-icon>
                 <span>Comment</span>
             </button>
             <button class="post-action-btn" onclick={handleRepost} title="Repost">
-                <img src={repostIconUrl} alt="Repost" class="post-action-icon" />
+                <c-linkedin-icon name="repost"></c-linkedin-icon>
                 <span>Repost</span>
             </button>
             <button class="post-action-btn" onclick={handleSend} title="Send">
-                <img src={sendIconUrl} alt="Send" class="post-action-icon" />
+                <c-linkedin-icon name="send"></c-linkedin-icon>
                 <span>Send</span>
             </button>
+        </div>
         </footer>
     </article>
 </template>

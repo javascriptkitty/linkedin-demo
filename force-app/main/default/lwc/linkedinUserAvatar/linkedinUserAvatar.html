@@ -1,0 +1,10 @@
+<template>
+    <div class="linkedin-user-avatar">
+        <template if:true={photo}>
+            <img class="avatar-img" src={photo} alt={name}  style={avatarStyle}/>
+        </template>
+        <template if:false={photo}>
+            <img class="avatar-img" src={defaultAvatarUrl} alt={name} style={avatarStyle}/>
+        </template>
+    </div>
+</template>

@@ -7,7 +7,8 @@ const SAMPLE_USER = {
     location: 'Chicago, IL',
     avatarPhoto: '',
     coverPhoto: '',
-    profileViewers: 32
+    profileViewers: 32,
+    isVerified: true
 };
 
 export default class LinkedinFeedPage extends LightningElement {
@@ -24,7 +25,7 @@ export default class LinkedinFeedPage extends LightningElement {
     @track _sortLabel = 'Top';
 
     chevronDownUrl = `${LINKEDIN_ASSETS}/icons/chevron_down.svg`;
-    liLogoUrl      = `${LINKEDIN_ASSETS}/images/li_logo.png`;
+    linkedinLogoUrl      = `${LINKEDIN_ASSETS}/images/linkedin_logo.svg`;
 
     get resolvedShowStats() {
         return this.showStats || true;

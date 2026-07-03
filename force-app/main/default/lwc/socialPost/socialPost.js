@@ -29,23 +29,15 @@ export default class SocialPost extends LightningElement {
     @track isExpanded = false;
     @track isLiked = false;
 
-    likeIconUrl = `${LINKEDIN_ASSETS}/icons/like.svg`;
-    commentIconUrl = `${LINKEDIN_ASSETS}/icons/comment.svg`;
-    repostIconUrl = `${LINKEDIN_ASSETS}/icons/repost.svg`;
-    sendIconUrl = `${LINKEDIN_ASSETS}/icons/send.svg`;
     publicIconUrl = `${LINKEDIN_ASSETS}/icons/public.svg`;
     moreHorizontalUrl = `${LINKEDIN_ASSETS}/icons/more_horizontal.svg`;
+    closeIconUrl = `${LINKEDIN_ASSETS}/icons/close.svg`;
     reactionLikeUrl = `${LINKEDIN_ASSETS}/icons/reaction_like.svg`;
     reactionHeartUrl = `${LINKEDIN_ASSETS}/icons/reaction_heart.svg`;
-
-    get authorInitials() {
-        if (!this.authorName) return '?';
-        return this.authorName
-            .split(' ')
-            .slice(0, 2)
-            .map((w) => w[0].toUpperCase())
-            .join('');
-    }
+    reactionPraiseUrl = `${LINKEDIN_ASSETS}/icons/reaction_praise.svg`;
+    reactionEntertainmentUrl = `${LINKEDIN_ASSETS}/icons/reaction_entertainment.svg`;
+    reactionInterestUrl = `${LINKEDIN_ASSETS}/icons/reaction_interest.svg`;
+    reactionSupportUrl = `${LINKEDIN_ASSETS}/icons/reaction_support.svg`;
 
     get isTruncated() {
         return !this.isExpanded && this.content && this.content.length > MAX_LENGTH;

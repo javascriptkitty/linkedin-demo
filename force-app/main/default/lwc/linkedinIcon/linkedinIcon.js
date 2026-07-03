@@ -31,8 +31,20 @@ export default class Icon extends LightningElement {
         return this.name === 'grid';
     }
 
-    get isSearch() {
-        return this.name === 'search';
+    get isLike() {
+        return this.name === 'like';
+    }
+
+    get isComment() {
+        return this.name === 'comment';
+    }
+
+    get isRepost() {
+        return this.name === 'repost';
+    }
+
+    get isSend() {
+        return this.name === 'send';
     }
 }
 
