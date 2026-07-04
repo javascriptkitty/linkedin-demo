@@ -7,7 +7,7 @@ export default class LinkedinUserAvatar extends LightningElement {
     @api photo = '';
     @api size = '48';
 
-    defaultAvatarUrl = `${LINKEDIN_ASSETS}/images/li_avatar_default.svg`;
+    defaultAvatarUrl = `${LINKEDIN_ASSETS}/icons/li_avatar_default.svg`;
 
     get avatarStyle() {
         return `width: ${this.size}px; height: ${this.size}px;`;

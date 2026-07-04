@@ -8,23 +8,4 @@
         <target>lightning__HomePage</target>
         <target>lightningCommunity__Page</target>
     </targets>
-    <targetConfigs>
-        <targetConfig targets="lightning__AppPage,lightning__RecordPage,lightning__HomePage">
-            <property name="authorName" type="String" label="Author Name" />
-            <property name="authorTitle" type="String" label="Author Title" />
-            <property name="authorPhoto" type="String" label="Author Photo URL" />
-            <property name="timeAgo" type="String" label="Time Ago" default="Just now" />
-            <property name="content" type="String" label="Post Content" />
-            <property name="reactions" type="Integer" label="Reactions Count" default="0" />
-            <property name="commentsCount" type="Integer" label="Comments Count" default="0" />
-            <property name="repostsCount" type="Integer" label="Reposts Count" default="0" />
-            <property
-                name="visibility"
-                type="String"
-                label="Visibility"
-                default="public"
-                datasource="public,connections,private"
-            />
-        </targetConfig>
-    </targetConfigs>
 </LightningComponentBundle>

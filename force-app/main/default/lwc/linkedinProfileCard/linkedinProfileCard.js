@@ -15,8 +15,8 @@ export default class LinkedinProfileCard extends LightningElement {
     @api showLinks = false;
     @api isVerified = false;
     
-    defaultCoverUrl    = `${LINKEDIN_ASSETS}/images/li_banner_default.svg`;
-    defaultAvatarUrl   = `${LINKEDIN_ASSETS}/images/li_avatar_default.svg`;
+    defaultCoverUrl    = `${LINKEDIN_ASSETS}/icons/li_banner_default.svg`;
+    defaultAvatarUrl   = `${LINKEDIN_ASSETS}/icons/li_avatar_default.svg`;
     bookmarkIconUrl    = `${LINKEDIN_ASSETS}/icons/bookmark.svg`;
     groupsIconUrl     = `${LINKEDIN_ASSETS}/icons/groups_icon.svg`;
     newslettersIconUrl = `${LINKEDIN_ASSETS}/icons/newsletters.svg`;

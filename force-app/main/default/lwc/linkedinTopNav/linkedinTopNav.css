@@ -30,6 +30,7 @@
     align-items: center;
     gap: 8px;
     flex-shrink: 0;
+    padding-top: 1px;
 }
 
 .nav-logo {
@@ -69,8 +70,10 @@
     border: 0;
     outline: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
-    font-weight: 500;
+    line-height: 24px;
+    font-weight: 400;
     appearance: none;
     -webkit-appearance: none;
     background-color: transparent;
@@ -113,7 +116,6 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 100%;
     width: 80px;
     font-size: 12px;
     color: rgba(0, 0, 0, 0.6);
@@ -129,7 +131,9 @@
 .nav-item span{
    display: inline-flex;
    line-height: 16px;
-   /* margin-top: 2.5px; */
+}
+.nav-item--active span {
+    transform: translateY(0.5px);
 }
 
 .nav-item::after {
@@ -149,6 +153,7 @@
 }
 
 .nav-item--active {
+    gap: 3px;
     color: rgba(0, 0, 0, 0.9);
 }
 
@@ -163,8 +168,9 @@
 }
 
 .nav-item--business{
-    width: 100px;
-    padding-left:12px;
+    width: unset;
+    margin-top: 0.5px;
+    margin-left:12px;
 }
 .nav-item--premium {
     width: 124px;

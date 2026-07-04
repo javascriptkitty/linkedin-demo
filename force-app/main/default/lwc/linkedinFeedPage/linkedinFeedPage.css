@@ -3,19 +3,14 @@
     display: block;
     background: #f4f2ee;
     min-height: 100vh;
-    /* Break out of Experience Builder's container padding on all sides */
     width: 100vw;
+    padding-bottom: 24px;
     position: relative;
-    /* left: 50%;
-    right: 50%; */
-    /* margin-left: -50vw;
-    margin-right: -50vw; */
-    /* Pull up to cover top padding from EXB theme/section */
-    /* margin-top: -32px; */
     padding-top: 0;
     font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     letter-spacing: 1%;
     box-sizing: border-box;
+    margin-bottom: -32px;
 }
 
 /* ===== 3-column grid ===== */
@@ -37,33 +32,6 @@
     gap: 8px;
 
 }
-
-/* Left stays fixed while page scrolls */
-/* .feed-sidebar--left {
-    grid-column: 1; */
-    /* grid-area: left;
-    position: sticky; */
-    /* top: 68px; */
-     /* 52px nav + 16px gap */
-    /* align-self: start; */
-/* } */
-
-/* Right scrolls with the feed */
-/* .feed-sidebar--right { */
-    /* grid-area: right;
-    position: static; */
-    /* grid-column: 2;
-} */
-
-/* ===== Main feed ===== */
-/* .feed-main { */
-    /* grid-area: main;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    min-width: 0; */
-    /* grid-column: 3;
-} */
 
 /* ===== Sort bar ===== */
 .feed-sort-bar {

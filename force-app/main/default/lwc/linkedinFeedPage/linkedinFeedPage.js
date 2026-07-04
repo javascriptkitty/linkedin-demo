@@ -4,33 +4,24 @@ import { LINKEDIN_FEED_CONFIG } from './linkedinFeedPageConfig';
 
 export default class LinkedinFeedPage extends LightningElement {
     @api config;
-    @api currentUser;
-    @api posts;
-    @api newsItems;
 
     chevronDownUrl = `${LINKEDIN_ASSETS}/icons/chevron_down.svg`;
-    linkedinLogoUrl = `${LINKEDIN_ASSETS}/images/linkedin_logo.svg`;
+    linkedinLogoUrl = `${LINKEDIN_ASSETS}/icons/linkedin_logo.svg`;
 
     get resolvedConfig() {
         return this.config || LINKEDIN_FEED_CONFIG;
     }
 
     get resolvedUser() {
-        return this.currentUser?.name
-            ? this.currentUser
-            : this.resolvedConfig.currentUser;
+        return this.resolvedConfig.currentUser;
     }
 
     get resolvedPosts() {
-        return this.posts?.length
-            ? this.posts
-            : this.resolvedConfig.posts;
+        return this.resolvedConfig.posts;
     }
 
     get resolvedNewsItems() {
-        return this.newsItems?.length
-            ? this.newsItems
-            : this.resolvedConfig.news.items;
+        return this.resolvedConfig.news.items;
     }
 
     get navConfig() {

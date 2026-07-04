@@ -8,11 +8,4 @@
         <target>lightning__HomePage</target>
         <target>lightningCommunity__Page</target>
     </targets>
-    <targetConfigs>
-        <targetConfig targets="lightning__AppPage,lightning__RecordPage,lightning__HomePage">
-            <property name="name" type="String" label="Name" />
-            <property name="photo" type="String" label="Photo URL" />
-            <property name="size" type="String" label="Size" />
-        </targetConfig>
-    </targetConfigs>
 </LightningComponentBundle>

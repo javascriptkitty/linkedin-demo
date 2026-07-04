@@ -1,13 +1,45 @@
 /* ===== Card ===== */
 .post-card {
+    width: 100%;
+    max-width: 555px;
+    margin: 0 auto;
     background: #ffffff;
     outline: 1px solid #dfdeda;
     border-radius: 8px;
     overflow: hidden;
     font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    width: 100%;
-    max-width: 555px;
-    margin: 0 auto;
+    color: #191919;
+}
+
+/* ===== Social context ===== */
+.post-context {
+    padding: 0 12px;
+    height: 36px;
+}
+
+.post-context-content{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    border-bottom: 1px solid rgba(140, 140, 140, 0.2);
+}
+
+.post-context-text {
+    min-width: 0;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.post-context-more {
+    border: 0;
+    background: none;
+    padding: 4px;
+    cursor: pointer;
+    border-radius: 50%;
 }
 
 /* ===== Header ===== */
@@ -15,7 +47,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    padding:  8px 4px 0 12px;
+    padding: 12px 8px 0 12px;
     gap: 8px;
 }
 
@@ -27,34 +59,47 @@
     min-width: 0;
 }
 
-/* ===== Author details ===== */
 .post-author-details {
     flex: 1;
     min-width: 0;
 }
 
-.post-author-name {
+.post-author-name-row {
     margin: 0;
-    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    min-width: 0;
+}
+
+.post-author-name {
+    min-width: 0;
+    font-size: 16px;
+    line-height: 20px;
     font-weight: 600;
-    color: #000000;
+    color: rgba(0, 0, 0, 0.9);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 .post-author-title {
-    margin: 1px 0 0;
+    margin: 0;
     font-size: 12px;
+    line-height: 16px;
     color: rgba(0, 0, 0, 0.6);
-    white-space: nowrap;
+    white-space: pre-line;
     overflow: hidden;
-    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 .post-meta {
-    margin: 2px 0 0;
+    margin: 0;
+    min-height: 16px;
     font-size: 12px;
+    line-height: 16px;
     color: rgba(0, 0, 0, 0.6);
     display: flex;
     align-items: center;
@@ -62,44 +107,82 @@
 }
 
 .post-meta-icon {
-    display: flex;
+    display: inline-flex;
     align-items: center;
+    color:rgba(0, 0, 0, 0.75);
 }
 
 .post-meta-img {
-    width: 15px;
-    height: 15px;
-    display: block;
+    width: 16px;
+    height: 16px;
+    color:rgba(0, 0, 0, 0.75);
 }
 
-/* ===== Icon button ===== */
+.post-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    flex-shrink: 0;
+    margin-right: -8px;
+}
+
+.post-follow-btn {
+    border: 0;
+    background: none;
+    color: rgb(10, 102, 194);
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 4px;
+    gap: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.post-follow-btn:hover {
+    background: rgb(55 143 233 / 0.1);
+    color: #004182
+}
+
 .post-icon-btn {
+    width: 32px;
+    height: 32px;
     background: none;
     border: none;
     cursor: pointer;
     padding: 8px;
     border-radius: 50%;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     transition: background 0.15s;
     flex-shrink: 0;
 }
 
-.post-icon-btn:hover {
+.post-icon-btn:hover,
+.post-context-more:hover {
     background: rgba(0, 0, 0, 0.06);
+}
+
+.post-action-icon {
+    width: 16px;
+    height: 16px;
+    display: block;
 }
 
 /* ===== Body ===== */
 .post-body {
-    padding:  4px 12px 0 12px;
+    padding: 8px 12px 0;
 }
 
 .post-content {
     margin: 0;
     font-size: 14px;
     color: #191919;
-    line-height: 17.5px;
+    line-height: 20px;
     white-space: pre-wrap;
     word-break: break-word;
 }
@@ -107,7 +190,7 @@
 .post-see-more {
     background: none;
     border: none;
-    padding: 0;
+    padding: 0 0 0 4px;
     cursor: pointer;
     font-size: 14px;
     color: rgba(0, 0, 0, 0.6);
@@ -118,27 +201,39 @@
     text-decoration: underline;
 }
 
-/* ===== Embedded media card ===== */
+.post-hashtags {
+    margin: 4px 0 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0a66c2;
+    line-height: 20px;
+}
+
+/* ===== Media variants ===== */
 .post-media-card {
-    margin: 0 12px 8px;
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.post-media-card--image {
+    border: 0;
+    border-radius: 0;
+}
+
+.post-media-card--link {
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-bottom: 8px;
     border-radius: 8px;
-    overflow: hidden;
-}
-
-.post-media-banner {
-    width: 100%;
-    position: relative;
-    overflow: hidden;
 }
 
 .post-media-banner {
     position: relative;
     width: 100%;
     overflow: hidden;
+    background: #f3f2ef;
 }
 
-/* Flat image — display as-is, full width, no crop */
 .post-media-img {
     display: block;
     width: 100%;
@@ -146,7 +241,6 @@
     pointer-events: none;
 }
 
-/* Red gradient overlay covers full container */
 .post-media-gradient {
     position: absolute;
     inset: 0;
@@ -157,7 +251,6 @@
     pointer-events: none;
 }
 
-/* Text + logo overlay */
 .post-media-overlay {
     position: absolute;
     inset: 0;
@@ -169,51 +262,36 @@
     box-sizing: border-box;
 }
 
-/* Figma: text area is 278px / 531px ≈ 52% of container width */
 .post-media-overlay-text {
     display: flex;
     flex-direction: column;
     max-width: 52%;
 }
 
-/* Each span = one line (rendered via for:each). Font 20px on ~531px container. */
-.post-media-overlay-light {
-    display: block;
-    font-size: 20px;
-    font-weight: 700;
-    color: #ffffff;
-    line-height: 1.1;
-    text-transform: uppercase;
-    font-family: 'Roboto', Arial, sans-serif;
-}
-
+.post-media-overlay-light,
 .post-media-overlay-dark {
     display: block;
     font-size: 20px;
     font-weight: 700;
-    color: #1a1a1a;
     line-height: 1.1;
     text-transform: uppercase;
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: Roboto, Arial, sans-serif;
 }
 
-/* Adecco logo: 106×26px in Figma at bottom-left (106/531 ≈ 20%) */
+.post-media-overlay-light {
+    color: #ffffff;
+}
+
+.post-media-overlay-dark {
+    color: #1a1a1a;
+}
+
 .post-media-overlay-logo {
     display: block;
     width: 20%;
     height: auto;
     max-width: 106px;
     min-width: 60px;
-}
-
-/* Hashtag line (blue, below post content) */
-.post-hashtags {
-    margin: 4px 0 0;
-    font-size: 14px;
-    font-weight: 600;
-    color: #0069c9;
-    font-family: Inter, sans-serif;
-    line-height: 1.4;
 }
 
 .post-media-footer {
@@ -224,7 +302,7 @@
     margin: 0;
     font-size: 14px;
     font-weight: 600;
-    color: #000000;
+    color: #191919;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -236,7 +314,6 @@
     color: rgba(0, 0, 0, 0.6);
 }
 
-/* Learn more CTA button */
 .post-media-cta-btn {
     display: block;
     width: 100%;
@@ -247,15 +324,15 @@
     text-align: center;
     font-size: 14px;
     font-weight: 600;
-    color: #0069c9;
+    color: #0a66c2;
     cursor: pointer;
-    font-family: Inter, sans-serif;
     transition: background 0.15s;
+    text-decoration: none;
 }
 
 .post-media-cta-btn:hover,
 .post-media-cta-btn:focus {
-    background: rgba(0, 103, 194, 0.1);
+    background: rgba(10, 102, 194, 0.08);
     color: #004182;
 }
 
@@ -264,16 +341,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-size: 14px;
+    line-height: 17.5px;
     padding: 8px 12px;
     flex-wrap: wrap;
     gap: 4px;
-}
-
-.post-reactions {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    gap: 2px;
 }
 
 .post-reaction-icons {
@@ -283,27 +355,22 @@
 }
 
 .post-reaction-img {
-    width: 15px;
-    height: 15px;
+    width: 16px;
+    height: 16px;
     display: block;
+    border-radius: 50%;
+    outline: 1px solid #ffffff;
 }
 
 .post-reaction-img--overlap {
     margin-left: -3px;
 }
 
-.post-reaction-count {
-    font-size: 14px;
-    font-weight: 500;
-    color: #606163;
-    margin-left: 0;
-    font-family: 'Roboto', sans-serif;
-}
-
-.post-counts-right {
+.post-reactions {
     display: flex;
     align-items: center;
-    gap: 2px;
+    cursor: pointer;
+    gap: 4px;
 }
 
 .post-count-btn {
@@ -312,58 +379,54 @@
     cursor: pointer;
     padding: 0;
     font-size: 14px;
+    line-height: 17.5px;
     font-weight: 400;
     color: rgba(0, 0, 0, 0.6);
-    letter-spacing: -0.28px;
 }
 
-
-.post-meta-dot {
-    color: rgba(0, 0, 0, 0.4);
-    font-size: 14px;
+.post-count-btn:hover {
+    color: #0a66c2;
+    text-decoration: underline;
 }
 
 /* ===== Footer ===== */
 .post-footer {
-    padding: 2px 12px;
+    padding: 0 12px 4px;
 }
 
-/* ===== Action icons ===== */
-.post-action-icon {
-    width: 16px;
-    height: 16px;
-    display: block;
-}
-
-/* ===== Action buttons ===== */
 .post-actions {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5px 0;
+    padding-top: 4px;
     border-top: 1px solid rgba(140, 140, 140, 0.2);
 }
 
 .post-action-btn {
     flex: 1;
+    min-width: 0;
+    height: 39.5px;
     background: none;
     border: none;
     cursor: pointer;
+    border-radius: 4px;
+    color: rgb(0 0 0 / 0.75);
+    font-size: 14px;
+    padding: 0;
+    font-weight: 600;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 39.5px;
-    border-radius: 4px;
-    color: rgba(0, 0, 0, 0.75);
-    font-size: 14px;
-    padding: 0;
-    font-weight: 600;
+    /* gap: 2px; */
+    /* padding: 2px 8px; */
     transition: background 0.15s, color 0.15s;
 }
 
+
+
 .post-action-btn:hover {
-    background: rgba(140, 140, 140, 0.1);
+    background: rgb(140 140 140 / 0.1);
     color: rgba(0, 0, 0, 0.9);
 }
 
@@ -376,3 +439,121 @@
     background: rgba(10, 102, 194, 0.08);
 }
 
+.post-action-btn--reaction {
+    position: relative;
+}
+
+
+/* ===== Reaction picker ===== */
+
+
+.reaction-picker {
+    position: absolute;
+    left: 0;
+    bottom: calc(100% + 18px);
+    z-index: 50;
+
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+
+    padding: 8px;
+    border-radius: 999px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28);
+
+    overflow: visible;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(6px);
+    transition: opacity 0.15s, visibility 0.15s, transform 0.15s;
+}
+
+.reaction-picker-btn {
+    width: 48px;
+    height: 48px;
+    flex: 0 0 48px;
+
+    position: relative;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    transition: width 120ms ease, flex-basis 120ms ease;
+    overflow: visible;
+}
+
+.reaction-picker-btn:hover {
+    width: 88px;
+    flex-basis: 88px;
+    z-index: 10;
+}
+
+.post-action-btn--reaction:hover .reaction-picker,
+.post-action-btn--reaction:focus-within .reaction-picker {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.reaction-picker-img {
+    width: 48px;
+    height: 48px;
+    display: block;
+
+    transition: width 120ms ease, height 120ms ease, transform 120ms ease;
+    transform-origin: center bottom;
+}
+
+.reaction-picker-btn:hover .reaction-picker-img {
+    width: 88px;
+    height: 88px;
+    transform: translateY(-10px);
+}
+/* ===== Comment preview ===== */
+.post-comment-preview {
+    padding: 8px 12px 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.post-comment-body {
+    min-width: 0;
+    flex: 1;
+}
+
+.post-comment-bubble {
+    padding: 8px 12px;
+    border-radius: 0 8px 8px 8px;
+    background: #f3f2ef;
+}
+
+.post-comment-author {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #191919;
+}
+
+.post-comment-title,
+.post-comment-meta {
+    margin: 0;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.post-comment-text {
+    margin: 8px 0 0;
+    font-size: 14px;
+    line-height: 20px;
+    color: #191919;
+    white-space: pre-wrap;
+}

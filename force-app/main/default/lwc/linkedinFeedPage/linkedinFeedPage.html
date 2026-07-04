@@ -51,31 +51,42 @@
             <template for:each={resolvedPosts} for:item="post">
                 <div key={post.id} class="feed-post-wrapper">
                     <c-social-post
-                        author-name={post.authorName}
-                        author-title={post.authorTitle}
-                        author-photo={post.authorPhoto}
-                        time-ago={post.timeAgo}
-                        content={post.content}
-                        content-hashtags={post.contentHashtags}
-                        reactions={post.reactions}
-                        comments-count={post.commentsCount}
-                        reposts-count={post.repostsCount}
-                        visibility={post.visibility}
-                        media-image-url={post.mediaImageUrl}
-                        media-gradient-url={post.mediaGradientUrl}
-                        media-overlay-title={post.mediaOverlayTitle}
-                        media-overlay-title-dark={post.mediaOverlayTitleDark}
-                        media-overlay-logo-url={post.mediaOverlayLogoUrl}
-                        media-title={post.mediaTitle}
-                        media-domain={post.mediaDomain}
-                        media-cta-label={post.mediaCtaLabel}
-                        media-cta-url={post.mediaCtaUrl}
-                        media-footer-bg={post.mediaFooterBg}
-                        onlike={handleLike}
-                        oncomment={handleComment}
-                        onrepost={handleRepost}
-                        onsend={handleSend}
-                    ></c-social-post>
+                    variant={post.variant}
+                    context-type={post.contextType}
+                    context-text={post.contextText}
+                    show-follow={post.showFollow}
+                    show-dismiss={post.showDismiss}
+                    author-name={post.authorName}
+                    author-title={post.authorTitle}
+                    author-photo={post.authorPhoto}
+                    author-verified={post.authorVerified}
+                    author-badge={post.authorBadge}
+                    time-ago={post.timeAgo}
+                    content={post.content}
+                    reactions={post.reactions}
+                    comments-count={post.commentsCount}
+                    reposts-count={post.repostsCount}
+                    visibility={post.visibility}
+                    reaction-types={post.reactionTypes}
+                    initial-reaction={post.initialReaction}
+                    media-image-url={post.mediaImageUrl}
+                    media-title={post.mediaTitle}
+                    media-domain={post.mediaDomain}
+                    media-cta-label={post.mediaCtaLabel}
+                    media-cta-url={post.mediaCtaUrl}
+                    media-footer-bg={post.mediaFooterBg}
+                    media-mode={post.mediaType}
+                    content-hashtags={post.contentHashtags}
+                    media-gradient-url={post.mediaGradientUrl}
+                    media-overlay-title={post.mediaOverlayTitle}
+                    media-overlay-title-dark={post.mediaOverlayTitleDark}
+                    media-overlay-logo-url={post.mediaOverlayLogoUrl}
+                    comment-author-name={post.commentAuthorName}
+                    comment-author-title={post.commentAuthorTitle}
+                    comment-author-photo={post.commentAuthorPhoto}
+                    comment-text={post.commentText}
+                    comment-time-ago={post.commentTimeAgo}>
+                </c-social-post>
                 </div>
             </template>
         </main>
@@ -116,5 +127,9 @@
                 </div>
             </div>
         </aside>
+        <!-- <c-cp-unbranded-chat config={chatConfig}></c-cp-unbranded-chat>
+        <template if:true={chatConfig.enabled}>
+            <c-linkedin-chat-box config={chatConfig}></c-linkedin-chat-box>
+        </template> -->
     </div>
 </template>

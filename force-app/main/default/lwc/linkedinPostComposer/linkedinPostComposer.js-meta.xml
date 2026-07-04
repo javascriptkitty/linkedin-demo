@@ -8,11 +8,4 @@
         <target>lightning__HomePage</target>
         <target>lightningCommunity__Page</target>
     </targets>
-    <targetConfigs>
-        <targetConfig targets="lightning__AppPage,lightning__RecordPage,lightning__HomePage">
-            <property name="userPhoto" type="String" label="User Photo URL" />
-            <property name="userName" type="String" label="User Name" />
-            <property name="placeholder" type="String" label="Placeholder Text" default="Start a post" />
-        </targetConfig>
-    </targetConfigs>
 </LightningComponentBundle>

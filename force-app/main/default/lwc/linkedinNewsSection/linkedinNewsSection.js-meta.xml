@@ -8,10 +8,4 @@
         <target>lightning__HomePage</target>
         <target>lightningCommunity__Page</target>
     </targets>
-    <targetConfigs>
-        <targetConfig targets="lightning__AppPage,lightning__RecordPage,lightning__HomePage">
-            <property name="title" type="String" label="Section Title" default="LinkedIn News" />
-            <property name="showMoreLabel" type="String" label="Show More Label" default="Show more news" />
-        </targetConfig>
-    </targetConfigs>
 </LightningComponentBundle>

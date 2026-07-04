@@ -8,17 +8,4 @@
         <target>lightning__HomePage</target>
         <target>lightningCommunity__Page</target>
     </targets>
-    <targetConfigs>
-        <targetConfig targets="lightning__AppPage,lightning__RecordPage,lightning__HomePage">
-            <property name="name" type="String" label="Name" />
-            <property name="jobTitle" type="String" label="Job Title" />
-            <property name="location" type="String" label="Location" />
-            <property name="isVerified" type="Boolean" label="Is Verified" default="false" />
-            <property name="avatarPhoto" type="String" label="Avatar Photo URL" />
-            <property name="coverPhoto" type="String" label="Cover Photo URL" />
-            <property name="profileViewers" type="Integer" label="Profile Viewers" default="0" />
-            <property name="showStats" type="Boolean" label="Show Stats" default="false" />
-            <property name="showLinks" type="Boolean" label="Show Quick Links" default="false" />
-        </targetConfig>
-    </targetConfigs>
 </LightningComponentBundle>
