@@ -66,7 +66,7 @@
     flex-shrink: 0;
 }
 
-.ad-avatar-circle--premium {
+.ad-avatar-circle {
     flex-shrink: 0;
     overflow: hidden;
     display: flex;
@@ -78,7 +78,7 @@
     height: 64px;
 }
 
-.ad-avatar-img--premium {
+.ad-avatar-img {
     position: absolute;
     inset: 0;
     width: 100%;

@@ -6,17 +6,9 @@ export default class LinkedinTopNav extends LightningElement {
     @api userPhoto = '';
     @api navConfig = {};
 
-
-    liLogoUrl     = `${LINKEDIN_ASSETS}/icons/li_logo.svg`;
-    searchIconUrl    = `${LINKEDIN_ASSETS}/icons/search.svg`;
-    homeIconUrl      = `${LINKEDIN_ASSETS}/icons/nav_home.svg`;
-    networkIconUrl   = `${LINKEDIN_ASSETS}/icons/nav_network.svg`;
-    briefcaseIconUrl = `${LINKEDIN_ASSETS}/icons/nav_briefcase.svg`;
-    messagingIconUrl = `${LINKEDIN_ASSETS}/icons/nav_messaging.svg`;
-    bellIconUrl      = `${LINKEDIN_ASSETS}/icons/nav_bell.svg`;
-    dropdownIconUrl  = `${LINKEDIN_ASSETS}/icons/nav_dropdown.svg`;
-    gridIconUrl      = `${LINKEDIN_ASSETS}/icons/nav_grid.svg`;
-    premiumIconUrl   = `${LINKEDIN_ASSETS}/icons/nav_premium.svg`;
+    liLogoUrl = `${LINKEDIN_ASSETS}/icons/li_logo.svg`;
+    searchIconUrl = `${LINKEDIN_ASSETS}/icons/search.svg`;
+    premiumIconUrl = `${LINKEDIN_ASSETS}/icons/nav_premium.svg`;
 
     get notifications() {
         return this.navConfig?.notifications || {};

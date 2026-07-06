@@ -83,7 +83,7 @@
 
 .nav-search:focus-within, .nav-search:active {
     border-color: #0a66c2;
-    background-color: none;
+    background-color: transparent;
     border-width: 2px;
    color: rgb(0 0 0 / 0.9)
 }
@@ -200,15 +200,6 @@
 }
 
 /* ===== Badges ===== */
-.nav-icon-wrap {
-    position: relative;
-    display: inline-flex;
-    width: 24px;
-    height: 24px;
-    align-items: center;
-    justify-content: center;
-}
-
 .nav-badge {
     position: absolute;
     top: 2.5px;
@@ -243,9 +234,3 @@
         transform: scaleX(1);
     }
 }
-
-@media (min-width: 768px) {
-    .nav-content {
-      max-width: 1128px;
-    }
-  }

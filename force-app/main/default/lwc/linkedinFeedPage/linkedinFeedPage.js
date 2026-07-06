@@ -40,10 +40,6 @@ export default class LinkedinFeedPage extends LightningElement {
         return this.resolvedConfig.news;
     }
 
-    get chatConfig() {
-        return this.resolvedConfig.chat;
-    }
-
     get resolvedShowStats() {
         return this.profileCardConfig.showStats;
     }
@@ -73,10 +69,6 @@ export default class LinkedinFeedPage extends LightningElement {
     handleAddPhoto() { this.dispatchEvent(new CustomEvent('addphoto')); }
     handleWriteArticle() { this.dispatchEvent(new CustomEvent('writearticle')); }
     handleSort() { this.dispatchEvent(new CustomEvent('sort')); }
-    handleLike(event) { this.dispatchEvent(new CustomEvent('like', { detail: event.detail })); }
-    handleComment() { this.dispatchEvent(new CustomEvent('comment')); }
-    handleRepost() { this.dispatchEvent(new CustomEvent('repost')); }
-    handleSend() { this.dispatchEvent(new CustomEvent('send')); }
     handleNewsClick(event) { this.dispatchEvent(new CustomEvent('newsclick', { detail: event.detail })); }
     handleShowMoreNews() { this.dispatchEvent(new CustomEvent('showmorenews')); }
 }

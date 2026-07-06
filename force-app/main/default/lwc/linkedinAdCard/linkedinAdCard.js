@@ -12,7 +12,11 @@ export default class LinkedinAdCard extends LightningElement {
     premiumLogoUrl    = `${LINKEDIN_ASSETS}/images/li_premium_logo.png`;
 
     get resolvedBodyText() {
-        return this.bodyText || `${this.userName.split(' ')[0]}, see who's viewed your profile in the last 90 days`;
+        if (this.bodyText) {
+            return this.bodyText;
+        }
+        const firstName = this.userName?.trim()?.split(/\s+/)[0] || 'You';
+        return `${firstName}, see who's viewed your profile in the last 90 days`;
     }
 
     handleMore() {
